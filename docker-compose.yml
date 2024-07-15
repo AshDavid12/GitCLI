@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  git-cli:
+    build: .
+    environment:
+      - OPENAI_API_KEY
+    volumes:
+      - /Users/gaashdavid/git/GitCLI:/app
+    working_dir: /app
+    entrypoint: ["poetry", "run", "python", "cli.py"]
